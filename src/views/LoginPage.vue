@@ -2,6 +2,9 @@
   <div
     class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12"
   >
+<div class="relative  sm:max-w-xl sm:mx-auto py-7">
+  <alerts :Judul="judul" :pesan="pesan" v-if="ShowAlerts"/>
+</div>
     <div class="relative py-3 sm:max-w-xl sm:mx-auto">
       <div
         class="
@@ -38,6 +41,7 @@
             >
               <div class="relative">
                 <input
+                  v-model="input.email"
                   autocomplete="off"
                   id="email"
                   name="email"
@@ -73,6 +77,7 @@
               </div>
               <div class="relative">
                 <input
+                  v-model="input.password"
                   autocomplete="off"
                   id="password"
                   name="password"
@@ -107,7 +112,7 @@
                 >
               </div>
               <div class="relative">
-                <button class="bg-blue-500 text-white rounded-md px-2 py-1">
+                <button class="bg-blue-500 text-white rounded-md px-2 py-1" @click="Submit">
                   Submit
                 </button>
               </div>
@@ -120,7 +125,39 @@
 </template>
 
 <script>
-export default {};
+import alerts from "../components/alerts.vue"
+export default {
+  emits: ['auth'],
+  components:{
+      alerts,
+  },
+  data: () => ({
+    judul:"",
+    ShowAlerts:false,
+    pesan:"",
+    input:{
+      email:"",
+      password:"",
+    }
+
+  }),
+  methods:{
+    Submit(){
+      if (this.input.email=="admin" && this.input.password=="rahasia") {
+        console.log("masuk")
+        let data={
+          status:true
+        }
+        $emit("auth",data)
+      } else {
+        this.ShowAlerts=true,
+        this.judul="Danger"
+        this.pesan="coba yang bener itu loginya."
+      }
+    }
+
+  }
+};
 </script>
 
 <style>
