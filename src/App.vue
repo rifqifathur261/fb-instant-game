@@ -1,10 +1,110 @@
 <template>
-  <div class="">
+  <div class="h-screen flex justify-center items-center flex-col">
     <!-- <LoginPage v-if="!isAuth" /> -->
     <!-- <Beranda v-else @auth="cek"/> -->
     <!-- <Beranda /> -->
     <!-- <div @auth="cek">HOME</div> -->
-    <div>{{ response }}</div>
+    <img src="./assets/logo.svg" alt="" />
+    <div class="grid grid-cols-2 gap-6 mt-20">
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Popularity
+      </div>
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Politician Look A Like
+      </div>
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Want to be Politician
+      </div>
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Peer Meter
+      </div>
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Probability Meter
+      </div>
+      <div
+        class="
+          w-40
+          h-40
+          shadow-xl
+          rounded-xl
+          text-slate-600
+          flex
+          justify-center
+          items-center
+          p-4
+          text-center text-xl
+        "
+      >
+        Custom Badge
+      </div>
+    </div>
+    <!-- <h1 class="text-8xl">Insocio</h1> -->
+    <!-- <div>{{ response }}</div> -->
   </div>
 </template>
 
