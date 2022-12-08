@@ -9,5 +9,84 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+
+    <!-- <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "608845434342664",
+          cookie: true,
+          xfbml: true,
+          version: "v15.0",
+        });
+        console.log("FB Init 2");
+        FB.AppEvents.logPageView();
+        FB.getLoginStatus(function (response) {
+          console.log("response login ", response);
+          if (response.status === "connected") {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+          } else if (response.status === "not_authorized") {
+            // the user is logged in to Facebook,
+            // but has not authenticated your app
+          } else {
+            // the user isn't logged in to Facebook.
+          }
+        });
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+    <script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+    <script>
+      FBInstant.initializeAsync().then(
+        function () // Start loading game assets here\
+        {
+          var progress = 0;
+          var interval = setInterval(function () {
+            if (progress >= 95) {
+              clearInterval(interval);
+              FBInstant.startGameAsync().then(function () {
+                var contextId = FBInstant.context.getID();
+                var contextType = FBInstant.context.getType();
+
+                var player = FBInstant.player;
+                var playerName = FBInstant.player.getName();
+                var playerPic = FBInstant.player.getPhoto();
+                var playerId = FBInstant.player.getID();
+
+                console.log("Game has been started");
+                console.log("player  ", player);
+                console.log("playerName ", playerName);
+                console.log("playerPic ", playerPic);
+                console.log("playerId ", playerId);
+
+                FBInstant.graphApi
+                  .requestAsync(`/me?fields=id,name`)
+                  .then(function (response) {
+                    console.log("response fbinstant graph api ", response);
+                  });
+              });
+            }
+            FBInstant.setLoadingProgress(progress);
+            progress += 5;
+          }, 100);
+        }
+      );
+    </script> -->
   </body>
 </html>

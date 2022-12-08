@@ -1,5 +1,7 @@
 <template>
-    <div>
-        masuk login
-    </div>
+  <div>masuk login</div>
 </template>
+
+
+<script setup>
+</script>
